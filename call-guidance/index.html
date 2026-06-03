@@ -1,0 +1,128 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Bernie's Organic Call Guidance (internal)</title>
+<style>
+:root{--ink:#1d2433;--mut:#6b7280;--line:#e5e7eb;--bg:#f7f8fa;--pp:#2f6f4f;--accent:#0f766e;}
+*{box-sizing:border-box}
+body{font:15px/1.55 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);margin:0;background:var(--bg)}
+.wrap{max-width:920px;margin:0 auto;padding:32px 22px 80px}
+h1{font-size:23px;margin:0 0 4px}
+h2{font-size:17px;margin:34px 0 8px;border-bottom:2px solid var(--line);padding-bottom:6px}
+.sub{color:var(--mut);margin:0 0 18px}
+.note{background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:12px 14px;font-size:13.5px;color:#713f12;margin:14px 0}
+.note.green{background:#f0fdf4;border-color:#bbf7d0;color:#14532d}
+.note.blue{background:#eef6ff;border-color:#bcd7f5;color:#1e3a5f}
+.note.red{background:#fef2f2;border-color:#fecaca;color:#7f1d1d}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:13px;margin:10px 0}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#f1f3f5;font-weight:600;color:#374151}
+td.v{font-weight:700;white-space:nowrap}
+.src{color:var(--mut);font-size:12px}
+.qa{background:#fff;border:1px solid var(--line);border-left:3px solid var(--pp);border-radius:8px;padding:14px 16px;margin:12px 0}
+.qa .q{font-weight:700;margin:0 0 6px;font-size:14.5px}
+.qa p{margin:6px 0}
+.qa .say{color:#14532d}
+.qa .verify{font-size:12.5px;color:var(--mut);margin-top:8px}
+.qa .verify b{color:var(--ink)}
+a{color:var(--accent)}
+.pill{display:inline-block;font-size:11px;padding:1px 7px;border-radius:10px;background:#eef2ff;color:#3730a3;margin-left:4px}
+.linkcard{display:block;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 14px;margin:8px 0;text-decoration:none;color:var(--ink)}
+.linkcard:hover{border-color:var(--accent)}
+.linkcard .t{font-weight:600;color:var(--accent)}
+.linkcard .d{font-size:12.5px;color:var(--mut);margin-top:2px}
+code{background:#f1f3f5;padding:1px 5px;border-radius:4px;font-size:12px}
+footer{margin-top:40px;color:var(--mut);font-size:12px;border-top:1px solid var(--line);padding-top:14px}
+</style></head><body><div class="wrap">
+
+<h1>Bernie's Organic: Call Guidance</h1>
+<p class="sub">Internal prep for Milica. The questions most likely to come up on the organic / attribution discussion, the answer to give, and exactly where to verify each number live in GA4, Search Console, or Wicked. Period: May 1 to 31, 2026.</p>
+
+<div class="note"><b>Read first: what we can and cannot claim.</b> Organic <b>sales cannot be split by keyword</b>. Google hides the organic search term (<code>not provided</code>), Wicked credits the landing page and channel rather than the keyword and spreads each sale across the touchpoints in a journey (linear attribution), and the store (store.bernies.com) is not in Search Console, which is where most purchases complete. So there is no clean "X% of sales are branded" number. Do not give one. What we can show is the keyword footprint, the traffic it pulls, and the new-customer acquisition it drives, all of which point the same way: non-branded is the discovery layer.</div>
+
+<h2>Quick reference (verified numbers)</h2>
+<table>
+<thead><tr><th>Metric</th><th>Value</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td>Organic Search attributed revenue (May)</td><td class="v">$9,983</td><td class="src">Wicked, Organic Search row</td></tr>
+<tr><td>All-organic revenue (Direct + Organic Search + Referral + Social)</td><td class="v">$23,711</td><td class="src">Wicked, "Organic" parent</td></tr>
+<tr><td>New customers (leads) from Organic Search</td><td class="v">104</td><td class="src">Wicked, New Leads. Direct 49 / Referral 41 / Social 3</td></tr>
+<tr><td>Organic new vs returning leads</td><td class="v">104 new / 54 re-engaged</td><td class="src">Wicked. Direct is the reverse: 49 / 126</td></tr>
+<tr><td>Total organic sessions (May)</td><td class="v">6,054</td><td class="src">GA4 308252309, Organic Search</td></tr>
+<tr><td>Organic sessions landing on blog / condition content</td><td class="v">2,505 (41%)</td><td class="src">GA4, content landing pages</td></tr>
+<tr><td>Those content pages' in-session transactions</td><td class="v">1 of 98</td><td class="src">GA4, organic transactions</td></tr>
+<tr><td>Ranked keywords that are non-branded</td><td class="v">96% (983 of 1,021)</td><td class="src">DataForSEO, deduped. Estimate; bernies.com capped at 1,000 pulled</td></tr>
+<tr><td>Estimated organic clicks from non-branded terms</td><td class="v">~64%</td><td class="src">DataForSEO etv, 4,769 of 7,411. Estimate</td></tr>
+<tr><td>Sales-driving pages' share of organic clicks</td><td class="v">15,337 of 24,115 (64%)</td><td class="src">Wicked by-page vs channel total</td></tr>
+</tbody>
+</table>
+<p class="src">GA4 sessions (6,054) and Wicked clicks/views (4,010) do not match because they measure differently. Use Wicked for revenue attribution and GA4 for traffic and engagement. Do not blend the two.</p>
+
+<h2>Anticipated questions and how to answer</h2>
+
+<div class="qa">
+<p class="q">1. What percentage of our organic sales come from branded keywords?</p>
+<p class="say"><b>Say:</b> It cannot be measured accurately, and that is a tracking limit, not a performance gap. Google hides the organic search term, Wicked credits pages not keywords, and the store is not in Search Console. The branded share looks larger than it really is because branded and direct visits are where journeys finish, not where they start. I will not hand you an invented percentage.</p>
+<p class="verify"><b>Verify / show:</b> the attribution report sections 1 to 3 (pages that drove sales), and GA4 Traffic acquisition for the channel split. Most organic revenue lands on the store ($7,535 of organic-search page revenue), which ranks almost entirely on brand and product names.</p>
+</div>
+
+<div class="qa">
+<p class="q">2. Which non-branded terms are actually driving sales?</p>
+<p class="say"><b>Say:</b> We cannot link a specific term to a specific sale (same tracking limits). What we can show is every non-branded term the pages rank for and the traffic each pulls. 96% of the keywords we rank for are non-branded, and about 64% of estimated organic clicks come from them.</p>
+<p class="verify"><b>Verify / show:</b> report section 4.2 (keyword list; the rows tagged "category" are non-branded, e.g. "green dog puke" rank 3, "orange dog poop" rank 4, "dog vomiting clear liquid" rank 4) and the attached terms file (983 terms). In GSC, filter Queries by "contains bernie" for branded vs the rest for non-branded.</p>
+</div>
+
+<div class="qa">
+<p class="q">3. If the sales look branded and direct, how do we know non-branded is working?</p>
+<p class="say"><b>Say:</b> Two measured signals from your own tools. Acquisition: organic search brought 104 net-new customers into the funnel in May, more than direct, referral, and social combined. Organic skews new (104 new vs 54 returning); direct is the opposite (49 new vs 126 returning), mostly people who already know you. Discovery: 2,505 organic visits (41%) landed on non-branded blog and condition content, and those pages converted almost nothing in the same visit (1 of 98), because people learn first and buy later.</p>
+<p class="verify"><b>Verify / show:</b> Wicked channel report (New Leads vs Re-Engaged Leads by channel) and GA4 Landing page report filtered to Organic Search.</p>
+</div>
+
+<div class="qa">
+<p class="q">4. Are we recovering? How is organic trending?</p>
+<p class="say"><b>Say (carefully):</b> Organic revenue and transactions rose year over year, but be precise about why. The site-wide jump was largely paid and promotion led, and organic's higher conversion rate is mostly a mix effect: AI Overviews stripped a lot of low-converting informational visits, which shrank the denominator. The honest story is that the foundation is executing and non-branded discovery is healthy, and the growth lever is converting category demand on the store pages.</p>
+<p class="verify red"><b>Do not</b> present the "fewer visitors, more buyers" inversion as an organic recovery win. The transaction rise is not organic-led.</p>
+<p class="verify"><b>Verify / show:</b> GA4 Traffic acquisition, compare periods by channel; GA4 Monetization for AOV. Frame drops as market-driven (Aug 2025 core update + AI Overviews).</p>
+</div>
+
+<div class="qa">
+<p class="q">5. Why is there no keyword data for the store?</p>
+<p class="say"><b>Say:</b> store.bernies.com is not in Search Console; only the content site (www.bernies.com) is. We fill that blind spot with DataForSEO. The store ranks almost entirely on its own brand and product names (about 97% of its organic clicks) and captures almost none of the category demand. That category gap is the store-page opportunity.</p>
+<p class="verify"><b>Verify / show:</b> report section 4; DataForSEO store rows.</p>
+</div>
+
+<div class="qa">
+<p class="q">6. Why do GA4 and Wicked numbers not match?</p>
+<p class="say"><b>Say:</b> Different tools and different attribution. Wicked is multi-touch (linear) and pixel based; GA4 is session based. Wicked is the source for revenue attribution, GA4 for traffic and engagement. They are not supposed to tie out, so we never blend them in one figure.</p>
+</div>
+
+<div class="qa">
+<p class="q">7. What is the plan to turn non-branded demand into sales?</p>
+<p class="say"><b>Say:</b> Build out the store product pages so category searchers land on a page that can both rank and convert: refresh the content, add product schema, and link to them from the blog posts that already pull this traffic. Target is to grow store product pages ranking in the top 20 for their own category terms from 3 today toward 30 and then 80 over the quarter.</p>
+<p class="verify"><b>Verify / show:</b> report sections 2 and 4; the Q3 strategy.</p>
+</div>
+
+<div class="qa">
+<p class="q">8. Is the site healthy, and are we losing top-3 / top-10 keywords?</p>
+<p class="say"><b>Say:</b> Pull it live rather than quoting from memory. Show current top-3 and top-10 query counts in GSC and compare periods. Frame any losses as market-driven (Aug 2025 core update + AI Overviews saturation), and point to the blog content that is still ranking and pulling discovery traffic as evidence the foundation is intact.</p>
+<p class="verify"><b>Verify / show:</b> GSC Performance, filter Position and compare date ranges.</p>
+</div>
+
+<h2>Verify it live</h2>
+
+<a class="linkcard" href="https://search.google.com/search-console/performance/search-analytics?resource_id=https%3A%2F%2Fwww.bernies.com%2F" target="_blank" rel="noopener">
+<div class="t">Search Console: Performance (www.bernies.com)</div>
+<div class="d">Queries and pages for the content site. Branded vs non-branded: filter Query "contains bernie" (branded) vs "does not contain bernie" (non-branded). Note the store is not a property here.</div></a>
+
+<a class="linkcard" href="https://analytics.google.com/analytics/web/#/p308252309/reports/intelligenthome" target="_blank" rel="noopener">
+<div class="t">GA4: property 308252309 (reports home)</div>
+<div class="d">Traffic acquisition: Reports &rarr; Acquisition &rarr; Traffic acquisition, dimension "Session default channel group", read the Organic Search row. Discovery content: Reports &rarr; Engagement &rarr; Landing page, add filter Session default channel group = Organic Search, then Landing page contains "/blogs/".</div></a>
+
+<a class="linkcard" href="https://aleksandar-hqdm.github.io/bernies-organic-attribution/" target="_blank" rel="noopener">
+<div class="t">Attribution report (client-facing)</div>
+<div class="d">Sections 1 to 3: organic revenue and the pages that drove sales. Section 4: keyword rankings (4.2 keyword list, "category" = non-branded).</div></a>
+
+<div class="note blue"><b>Wicked (no public link).</b> Channels &rarr; the "Organic" group &rarr; Organic Search row. The New Leads and Re-Engaged Leads columns are the acquisition numbers (104 new vs 54 re-engaged for Organic Search). Remember to drill to "Organic Search", not the parent "Organic", which also bundles Direct, Referral, and Social.</div>
+
+<footer>Internal call guidance. Figures: Wicked Reports (linear attribution) and GA4 (property 308252309), May 1 to 31, 2026; keyword footprint from DataForSEO Labs (current rankings, estimated). Not for client distribution.</footer>
+</div></body></html>
