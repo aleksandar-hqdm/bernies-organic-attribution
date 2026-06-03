@@ -59,7 +59,7 @@ footer{margin-top:40px;color:var(--mut);font-size:12px;border-top:1px solid var(
 <tr><td>Sales-driving pages' share of organic clicks</td><td class="v">15,337 of 24,115 (64%)</td><td class="src">Wicked by-page click sum (pages with sales) &divide; channel-total clicks (18,220 + 4,010 + 1,123 + 762)</td></tr>
 </tbody>
 </table>
-<p class="src">GA4 sessions (6,054) and Wicked clicks/views (4,010) do not match because they measure differently. Use Wicked for revenue attribution and GA4 for traffic and engagement. Do not blend the two.</p>
+<div class="note blue"><b>Three different organic totals, on purpose.</b> The keyword tool <b>estimates</b> 7,411 organic clicks (a model across all ranked terms), GA4 <b>measured</b> 6,054 organic sessions, and Wicked <b>tracked</b> 4,010 organic-search clicks/views. They are not meant to match: an estimate runs highest, GA4 captures the most actual traffic, and Wicked counts only what its pixel tracked. The report rescales the 7,411 estimate down to Wicked's 4,010 (factor x0.54). Use Wicked for revenue, GA4 for traffic and engagement, and the keyword tool for the ranking footprint. Do not blend them.</div>
 
 <h2>Methodology: how every number is derived</h2>
 <p class="sub">Three tools, three jobs, kept separate. If anyone asks "where does that come from," this is the answer.</p>
@@ -78,11 +78,12 @@ footer{margin-top:40px;color:var(--mut);font-size:12px;border-top:1px solid var(
 <li><b>Discovery content</b> = the rows whose landing path contains /blogs/, /blog/, /knowledge-base, /university, /help, /perfect-poop/conditions, /article-categories, or /pages/: 2,505 sessions (2,505 &divide; 6,054 = 41%) and 1 transaction. The store's ~97% branded figure is its branded share of estimated clicks (DataForSEO, below).</li>
 </ul>
 
-<p class="mlabel">DataForSEO Labs (keyword footprint, estimated) &middot; "Ranked Keywords"</p>
+<p class="mlabel">DataForSEO (keyword footprint, estimated) &middot; "Ranked Keywords"</p>
 <ul>
-<li><b>Pull:</b> ranked keywords for bernies.com, store.bernies.com, perfectpoop.dog, helpmydogpoop.com, up to 1,000 per domain (bernies.com hit the cap), then deduped by (keyword, ranking URL) keeping the higher estimate = 1,021 keyword-to-page pairs.</li>
+<li><b>What it is:</b> a third-party keyword-intelligence tool. It tracks where the pages rank in Google and estimates the clicks each position brings. It is <b>not Google's own data</b>, so it will not match GSC or GA4. That is expected, not an error.</li>
+<li><b>Pull:</b> ranked keywords across the domains, up to 1,000 per domain. In practice the rankings sit on bernies.com (hit the 1,000 cap) and store.bernies.com (56); the two microsites return effectively nothing (perfectpoop.dog 0, which now redirects to the store; helpmydogpoop.com 1). Deduped by (keyword, ranking URL), keeping the higher estimate = 1,021 keyword-to-page pairs.</li>
 <li><b>Branded</b> = the keyword contains a Bernie's brand or product word (bernie, perfect poop, charming chompers, marvelous mobility, healthy hips, omg omega). <b>Non-branded</b> = none of those. Non-branded count 983 &divide; 1,021 = 96%.</li>
-<li><b>etv</b> = DataForSEO's estimated monthly organic clicks at the current rank. Non-branded etv 4,769 &divide; total 7,411 = 64%. This is a model of clicks, not measured traffic, and reflects only the keywords pulled, so treat it as directional.</li>
+<li><b>etv</b> = the tool's estimated monthly organic clicks at the current rank. Non-branded etv 4,769 &divide; total 7,411 = 64%. The 64% <b>share</b> is the durable figure; it holds whether you use the raw estimate or normalize to Wicked's 4,010. Do not quote the raw 4,769 next to Wicked's 4,010, because the estimate's non-branded slice alone looks larger than Wicked's entire measured organic search.</li>
 </ul>
 
 <h2>Anticipated questions and how to answer</h2>
