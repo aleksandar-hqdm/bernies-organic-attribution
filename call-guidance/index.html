@@ -19,6 +19,9 @@ th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line);verti
 th{background:#f1f3f5;font-weight:600;color:#374151}
 td.v{font-weight:700;white-space:nowrap}
 .src{color:var(--mut);font-size:12px}
+ul{margin:6px 0 16px;padding-left:20px}
+li{margin:4px 0;font-size:13.5px}
+.mlabel{margin:16px 0 4px;font-size:14px;font-weight:700;color:var(--pp)}
 .qa{background:#fff;border:1px solid var(--line);border-left:3px solid var(--pp);border-radius:8px;padding:14px 16px;margin:12px 0}
 .qa .q{font-weight:700;margin:0 0 6px;font-size:14.5px}
 .qa p{margin:6px 0}
@@ -42,21 +45,45 @@ footer{margin-top:40px;color:var(--mut);font-size:12px;border-top:1px solid var(
 
 <h2>Quick reference (verified numbers)</h2>
 <table>
-<thead><tr><th>Metric</th><th>Value</th><th>Source</th></tr></thead>
+<thead><tr><th>Metric</th><th>Value</th><th>How it is derived</th></tr></thead>
 <tbody>
-<tr><td>Organic Search attributed revenue (May)</td><td class="v">$9,983</td><td class="src">Wicked, Organic Search row</td></tr>
-<tr><td>All-organic revenue (Direct + Organic Search + Referral + Social)</td><td class="v">$23,711</td><td class="src">Wicked, "Organic" parent</td></tr>
-<tr><td>New customers (leads) from Organic Search</td><td class="v">104</td><td class="src">Wicked, New Leads. Direct 49 / Referral 41 / Social 3</td></tr>
-<tr><td>Organic new vs returning leads</td><td class="v">104 new / 54 re-engaged</td><td class="src">Wicked. Direct is the reverse: 49 / 126</td></tr>
-<tr><td>Total organic sessions (May)</td><td class="v">6,054</td><td class="src">GA4 308252309, Organic Search</td></tr>
-<tr><td>Organic sessions landing on blog / condition content</td><td class="v">2,505 (41%)</td><td class="src">GA4, content landing pages</td></tr>
-<tr><td>Those content pages' in-session transactions</td><td class="v">1 of 98</td><td class="src">GA4, organic transactions</td></tr>
-<tr><td>Ranked keywords that are non-branded</td><td class="v">96% (983 of 1,021)</td><td class="src">DataForSEO, deduped. Estimate; bernies.com capped at 1,000 pulled</td></tr>
-<tr><td>Estimated organic clicks from non-branded terms</td><td class="v">~64%</td><td class="src">DataForSEO etv, 4,769 of 7,411. Estimate</td></tr>
-<tr><td>Sales-driving pages' share of organic clicks</td><td class="v">15,337 of 24,115 (64%)</td><td class="src">Wicked by-page vs channel total</td></tr>
+<tr><td>Organic Search attributed revenue (May)</td><td class="v">$9,983</td><td class="src">Wicked &rarr; Organic Search row &rarr; Attributed Revenue column</td></tr>
+<tr><td>All-organic revenue (Direct + Organic Search + Referral + Social)</td><td class="v">$23,711</td><td class="src">Sum of the four Wicked channel rows: 10,461 + 9,983 + 2,904 + 363</td></tr>
+<tr><td>New customers (leads) from Organic Search</td><td class="v">104</td><td class="src">Wicked New Leads, Organic Search row. "More than the rest combined" = 104 vs Direct 49 + Referral 41 + Social 3 = 93</td></tr>
+<tr><td>Organic new vs returning leads</td><td class="v">104 new / 54 re-engaged</td><td class="src">Wicked New Leads / Re-Engaged Leads columns, Organic Search row. Direct is the reverse: 49 / 126</td></tr>
+<tr><td>Total organic sessions (May)</td><td class="v">6,054</td><td class="src">GA4 sessions, filtered to channel = Organic Search, summed across all landing pages</td></tr>
+<tr><td>Organic sessions landing on blog / condition content</td><td class="v">2,505 (41%)</td><td class="src">GA4 sessions where the landing path contains /blogs/, /knowledge-base, /university, /help, /perfect-poop/conditions, or /pages/; 2,505 &divide; 6,054</td></tr>
+<tr><td>Those content pages' in-session transactions</td><td class="v">1 of 98</td><td class="src">GA4 transactions metric: content landing pages = 1; all organic = 98</td></tr>
+<tr><td>Ranked keywords that are non-branded</td><td class="v">96% (983 of 1,021)</td><td class="src">DataForSEO ranked keywords deduped by (keyword, URL) = 1,021; 983 contain no Bernie's brand word. Estimate; bernies.com pull capped at 1,000</td></tr>
+<tr><td>Estimated organic clicks from non-branded terms</td><td class="v">~64%</td><td class="src">DataForSEO etv: non-branded 4,769 &divide; total 7,411. Estimate</td></tr>
+<tr><td>Sales-driving pages' share of organic clicks</td><td class="v">15,337 of 24,115 (64%)</td><td class="src">Wicked by-page click sum (pages with sales) &divide; channel-total clicks (18,220 + 4,010 + 1,123 + 762)</td></tr>
 </tbody>
 </table>
 <p class="src">GA4 sessions (6,054) and Wicked clicks/views (4,010) do not match because they measure differently. Use Wicked for revenue attribution and GA4 for traffic and engagement. Do not blend the two.</p>
+
+<h2>Methodology: how every number is derived</h2>
+<p class="sub">Three tools, three jobs, kept separate. If anyone asks "where does that come from," this is the answer.</p>
+
+<p class="mlabel">Wicked Reports (revenue, sales, leads, clicks) &middot; linear (multi-touch) attribution &middot; May 1 to 31, 2026</p>
+<ul>
+<li><b>Channel view</b> gives four rows. Organic Search: $9,983 revenue, 217.2 sales, 4,010 clicks/views, 104 New Leads, 54 Re-Engaged Leads. The others: Direct $10,461 / 18,220 clicks / 49 new / 126 re-engaged; Referral $2,904 / 1,123 / 41; Social $363 / 762 / 3.</li>
+<li><b>All-organic</b> ($23,711 revenue, 24,115 clicks, 556.2 sales) is the sum of those four rows, which is Wicked's parent "Organic". Sales are decimals because linear attribution splits each order across the pages in the journey.</li>
+<li><b>By-page export</b> lists only pages that took part in a sale. Their clicks sum to 15,337 (vs the 24,115 channel total = 64% coverage); revenue on them sums to $23,709 (the $2 gap vs $23,711 is rounding). Each page is tagged to a location by its URL, and organic-search revenue summed per location gives Store $7,535 and Blog/Content $208.</li>
+</ul>
+
+<p class="mlabel">GA4 (measured sessions and transactions) &middot; property 308252309</p>
+<ul>
+<li><b>Query:</b> <code>runReport</code>, date range 2026-05-01 to 2026-05-31, dimension filter <code>sessionDefaultChannelGroup = "Organic Search"</code>, dimensions landingPage + hostName, metrics sessions + transactions.</li>
+<li><b>Total organic</b> = sum of all returned rows: 6,054 sessions, 98 transactions.</li>
+<li><b>Discovery content</b> = the rows whose landing path contains /blogs/, /blog/, /knowledge-base, /university, /help, /perfect-poop/conditions, /article-categories, or /pages/: 2,505 sessions (2,505 &divide; 6,054 = 41%) and 1 transaction. The store's ~97% branded figure is its branded share of estimated clicks (DataForSEO, below).</li>
+</ul>
+
+<p class="mlabel">DataForSEO Labs (keyword footprint, estimated) &middot; "Ranked Keywords"</p>
+<ul>
+<li><b>Pull:</b> ranked keywords for bernies.com, store.bernies.com, perfectpoop.dog, helpmydogpoop.com, up to 1,000 per domain (bernies.com hit the cap), then deduped by (keyword, ranking URL) keeping the higher estimate = 1,021 keyword-to-page pairs.</li>
+<li><b>Branded</b> = the keyword contains a Bernie's brand or product word (bernie, perfect poop, charming chompers, marvelous mobility, healthy hips, omg omega). <b>Non-branded</b> = none of those. Non-branded count 983 &divide; 1,021 = 96%.</li>
+<li><b>etv</b> = DataForSEO's estimated monthly organic clicks at the current rank. Non-branded etv 4,769 &divide; total 7,411 = 64%. This is a model of clicks, not measured traffic, and reflects only the keywords pulled, so treat it as directional.</li>
+</ul>
 
 <h2>Anticipated questions and how to answer</h2>
 
