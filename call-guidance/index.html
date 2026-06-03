@@ -41,7 +41,7 @@ footer{margin-top:40px;color:var(--mut);font-size:12px;border-top:1px solid var(
 <h1>Bernie's Organic: Call Guidance</h1>
 <p class="sub">Internal prep for Milica. The questions most likely to come up on the organic / attribution discussion, the answer to give, and exactly where to verify each number live in GA4, Search Console, or Wicked. Period: May 1 to 31, 2026.</p>
 
-<div class="note"><b>Read first: what we can and cannot claim.</b> Organic <b>sales cannot be split by keyword</b>. Google hides the organic search term (<code>not provided</code>), Wicked credits the landing page and channel rather than the keyword and spreads each sale across the touchpoints in a journey (linear attribution), and the store (store.bernies.com) is not in Search Console, which is where most purchases complete. So there is no clean "X% of sales are branded" number. Do not give one. What we can show is the keyword footprint, the traffic it pulls, and the new-customer acquisition it drives, all of which point the same way: non-branded is the discovery layer.</div>
+<div class="note"><b>Read first: what we can and cannot claim.</b> Organic <b>sales cannot be split by keyword</b>. Google hides the organic search term (<code>not provided</code>), Wicked credits the landing page and channel rather than the keyword and spreads each sale across the touchpoints in a journey (linear attribution), and the store (store.bernies.com) is not in Search Console, which is where most purchases complete. So there is no clean "X% of sales are branded" number. Do not give one. What we can show is the actual non-branded terms we rank for, the traffic those pages pull, and the new-customer acquisition organic drives, all of which point the same way: non-branded is the discovery layer.</div>
 
 <h2>Quick reference (verified numbers)</h2>
 <table>
@@ -54,8 +54,6 @@ footer{margin-top:40px;color:var(--mut);font-size:12px;border-top:1px solid var(
 <tr><td>Total organic sessions (May)</td><td class="v">6,054</td><td class="src">GA4 sessions, filtered to channel = Organic Search, summed across all landing pages</td></tr>
 <tr><td>Organic sessions landing on blog / condition content</td><td class="v">2,505 (41%)</td><td class="src">GA4 sessions where the landing path contains /blogs/, /knowledge-base, /university, /help, /perfect-poop/conditions, or /pages/; 2,505 &divide; 6,054</td></tr>
 <tr><td>Those content pages' in-session transactions</td><td class="v">1 of 98</td><td class="src">GA4 transactions metric: content landing pages = 1; all organic = 98</td></tr>
-<tr><td>Ranked keywords that are non-branded</td><td class="v">96% (983 of 1,021)</td><td class="src">DataForSEO ranked keywords deduped by (keyword, URL) = 1,021; 983 contain no Bernie's brand word. Estimate; bernies.com pull capped at 1,000</td></tr>
-<tr><td>Estimated organic clicks from non-branded terms</td><td class="v">~64%</td><td class="src">DataForSEO etv: non-branded 4,769 &divide; total 7,411. Estimate</td></tr>
 <tr><td>Sales-driving pages' share of organic clicks</td><td class="v">15,337 of 24,115 (64%)</td><td class="src">Wicked by-page click sum (pages with sales) &divide; channel-total clicks (18,220 + 4,010 + 1,123 + 762)</td></tr>
 </tbody>
 </table>
@@ -75,15 +73,14 @@ footer{margin-top:40px;color:var(--mut);font-size:12px;border-top:1px solid var(
 <ul>
 <li><b>Query:</b> <code>runReport</code>, date range 2026-05-01 to 2026-05-31, dimension filter <code>sessionDefaultChannelGroup = "Organic Search"</code>, dimensions landingPage + hostName, metrics sessions + transactions.</li>
 <li><b>Total organic</b> = sum of all returned rows: 6,054 sessions, 98 transactions.</li>
-<li><b>Discovery content</b> = the rows whose landing path contains /blogs/, /blog/, /knowledge-base, /university, /help, /perfect-poop/conditions, /article-categories, or /pages/: 2,505 sessions (2,505 &divide; 6,054 = 41%) and 1 transaction. The store's ~97% branded figure is its branded share of estimated clicks (DataForSEO, below).</li>
+<li><b>Discovery content</b> = the rows whose landing path contains /blogs/, /blog/, /knowledge-base, /university, /help, /perfect-poop/conditions, /article-categories, or /pages/: 2,505 sessions (2,505 &divide; 6,054 = 41%) and 1 transaction.</li>
 </ul>
 
 <p class="mlabel">DataForSEO (keyword footprint, estimated) &middot; "Ranked Keywords"</p>
 <ul>
 <li><b>What it is:</b> a third-party keyword-intelligence tool. It tracks where the pages rank in Google and estimates the clicks each position brings. It is <b>not Google's own data</b>, so it will not match GSC or GA4. That is expected, not an error.</li>
 <li><b>Pull:</b> ranked keywords across the domains, up to 1,000 per domain. In practice the rankings sit on bernies.com (hit the 1,000 cap) and store.bernies.com (56); the two microsites return effectively nothing (perfectpoop.dog 0, which now redirects to the store; helpmydogpoop.com 1). Deduped by (keyword, ranking URL), keeping the higher estimate = 1,021 keyword-to-page pairs.</li>
-<li><b>Branded</b> = the keyword contains a Bernie's brand or product word (bernie, perfect poop, charming chompers, marvelous mobility, healthy hips, omg omega). <b>Non-branded</b> = none of those. Non-branded count 983 &divide; 1,021 = 96%.</li>
-<li><b>etv</b> = the tool's estimated monthly organic clicks at the current rank. Non-branded etv 4,769 &divide; total 7,411 = 64%. The 64% <b>share</b> is the durable figure; it holds whether you use the raw estimate or normalize to Wicked's 4,010. Do not quote the raw 4,769 next to Wicked's 4,010, because the estimate's non-branded slice alone looks larger than Wicked's entire measured organic search.</li>
+<li><b>On the non-branded share:</b> we are holding back a headline "X% non-branded" figure for now. It is a third-party estimate that diverges from Search Console, so it tends to open more questions than it settles. Show the actual terms (report section 4.2 and the attached list), or the measured GSC query split, instead of a percentage.</li>
 </ul>
 
 <h2>Anticipated questions and how to answer</h2>
@@ -96,8 +93,8 @@ footer{margin-top:40px;color:var(--mut);font-size:12px;border-top:1px solid var(
 
 <div class="qa">
 <p class="q">2. Which non-branded terms are actually driving sales?</p>
-<p class="say"><b>Say:</b> We cannot link a specific term to a specific sale (same tracking limits). What we can show is every non-branded term the pages rank for and the traffic each pulls. 96% of the keywords we rank for are non-branded, and about 64% of estimated organic clicks come from them.</p>
-<p class="verify"><b>Verify / show:</b> report section 4.2 (keyword list; the rows tagged "category" are non-branded, e.g. "green dog puke" rank 3, "orange dog poop" rank 4, "dog vomiting clear liquid" rank 4) and the attached terms file (983 terms). In GSC, filter Queries by "contains bernie" for branded vs the rest for non-branded.</p>
+<p class="say"><b>Say:</b> We cannot link a specific term to a specific sale (same tracking limits). What we can show is the non-branded terms your pages rank for and the traffic they pull. Lead with the actual terms, not a percentage: a non-branded share from the keyword tool is a third-party estimate that will not match Search Console, so it only invites questions.</p>
+<p class="verify"><b>Verify / show:</b> report section 4.2 (the keyword list; rows tagged "category" are non-branded, e.g. "green dog puke" rank 3, "orange dog poop" rank 4, "dog vomiting clear liquid" rank 4) and the attached terms file. For a measured view: GSC Performance, filter Queries by "contains bernie" (branded) vs the rest (non-branded) for the content site.</p>
 </div>
 
 <div class="qa">
